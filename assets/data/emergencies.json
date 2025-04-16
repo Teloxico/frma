@@ -1,0 +1,721 @@
+{
+    "emergencies": [
+      {
+        "id": "heart_attack",
+        "title": "Heart Attack",
+        "description": "A heart attack occurs when blood flow to part of the heart is blocked, causing damage to heart muscle.",
+        "color": "#FF0000",
+        "icon": "favorite",
+        "highPriority": true,
+        "dos": [
+          "Call emergency services immediately.",
+          "Help the person stay calm and seated.",
+          "Administer aspirin (if not allergic) to thin the blood.",
+          "Perform CPR if the person becomes unconscious and stops breathing.",
+          "Keep the environment quiet and stress-free."
+        ],
+        "donts": [
+          "Do not leave the person alone.",
+          "Avoid giving food or drink unless instructed.",
+          "Do not delay seeking medical help, even if symptoms seem mild.",
+          "Avoid physical exertion or stressful activities.",
+          "Do not administer any medication other than aspirin."
+        ],
+        "questions": [
+          {
+            "id": "chest_pain_severity",
+            "text": "On a scale of 1 to 10, how severe is the chest pain?",
+            "description": "1 = mild, 10 = excruciating",
+            "type": "slider",
+            "min": 1,
+            "max": 10,
+            "defaultValue": 5
+          },
+          {
+            "id": "loss_of_consciousness",
+            "text": "Has the person lost consciousness at any point?",
+            "type": "boolean"
+          },
+          {
+            "id": "breathing_difficulty",
+            "text": "How would you describe the person's breathing?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Normal", "value": "normal"},
+              {"text": "Slightly labored", "value": "slight"},
+              {"text": "Very labored", "value": "severe"},
+              {"text": "Not breathing", "value": "none"}
+            ]
+          },
+          {
+            "id": "known_heart_condition",
+            "text": "Does the person have a known history of heart disease?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Yes", "value": "yes"},
+              {"text": "No", "value": "no"},
+              {"text": "Don't know", "value": "unknown"}
+            ]
+          },
+          {
+            "id": "aspirin_allergy",
+            "text": "Is the person allergic to aspirin?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Yes", "value": "yes"},
+              {"text": "No", "value": "no"},
+              {"text": "Don't know", "value": "unknown"}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stroke",
+        "title": "Stroke",
+        "description": "A stroke occurs when blood supply to part of the brain is interrupted or reduced, preventing brain tissue from getting oxygen.",
+        "color": "#FFA500",
+        "icon": "psychology",
+        "highPriority": true,
+        "dos": [
+          "Call emergency services immediately.",
+          "Note the time when symptoms started.",
+          "Keep the person safe and comfortable.",
+          "Turn the person on their side if unconscious to prevent choking.",
+          "Stay with the person and provide reassurance."
+        ],
+        "donts": [
+          "Do not give food, drink, or medication unless instructed.",
+          "Avoid moving the person unless necessary.",
+          "Do not ignore symptoms like sudden weakness or confusion.",
+          "Avoid delaying medical attention, even if symptoms improve temporarily.",
+          "Do not perform CPR unless breathing stops."
+        ],
+        "questions": [
+          {
+            "id": "facial_drooping",
+            "text": "Ask the person to smile. Is there any facial drooping?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "No drooping", "value": "none"},
+              {"text": "Slight drooping on one side", "value": "slight"},
+              {"text": "Significant drooping on one side", "value": "significant"},
+              {"text": "Unable to smile", "value": "unable"}
+            ]
+          },
+          {
+            "id": "arm_weakness",
+            "text": "Ask the person to raise both arms. Does one arm drift downward?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "No drift", "value": "none"},
+              {"text": "Slight drift", "value": "slight"},
+              {"text": "Significant drift", "value": "significant"},
+              {"text": "Unable to raise one arm", "value": "unable"}
+            ]
+          },
+          {
+            "id": "speech_difficulty",
+            "text": "Ask the person to repeat a simple sentence. Is their speech slurred or difficult to understand?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Clear speech", "value": "clear"},
+              {"text": "Slightly slurred", "value": "slight"},
+              {"text": "Very slurred", "value": "severe"},
+              {"text": "Unable to speak", "value": "unable"}
+            ]
+          },
+          {
+            "id": "symptom_onset",
+            "text": "How long ago did the symptoms start?",
+            "description": "Time in minutes",
+            "type": "slider",
+            "min": 0,
+            "max": 120,
+            "defaultValue": 30
+          },
+          {
+            "id": "vision_changes",
+            "text": "Has the person experienced sudden vision changes?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Yes", "value": "yes"},
+              {"text": "No", "value": "no"},
+              {"text": "Don't know", "value": "unknown"}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "severe_bleeding",
+        "title": "Severe Bleeding",
+        "description": "Severe bleeding can be life-threatening and requires immediate intervention to prevent shock.",
+        "color": "#FF0000",
+        "icon": "bloodtype",
+        "highPriority": true,
+        "dos": [
+          "Apply direct pressure to the wound with a clean cloth.",
+          "Elevate the injured area above the heart.",
+          "Call emergency services immediately.",
+          "Use gloves or other barriers to prevent infection.",
+          "Monitor for signs of shock."
+        ],
+        "donts": [
+          "Do not remove embedded objects.",
+          "Avoid using unclean materials.",
+          "Do not wash severe wounds with water.",
+          "Avoid tourniquets unless trained.",
+          "Do not delay seeking medical help."
+        ],
+        "questions": [
+          {
+            "id": "bleeding_control",
+            "text": "Is the bleeding controlled with direct pressure?",
+            "type": "boolean"
+          },
+          {
+            "id": "blood_loss_amount",
+            "text": "Approximately how much blood has been lost?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Minimal", "value": "minimal"},
+              {"text": "Small", "value": "small"},
+              {"text": "Moderate", "value": "moderate"},
+              {"text": "Profuse", "value": "profuse"}
+            ]
+          },
+          {
+            "id": "shock_symptoms",
+            "text": "Is the person showing signs of shock (pale skin, rapid breathing, dizziness)?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "No", "value": "none"},
+              {"text": "Mild", "value": "mild"},
+              {"text": "Moderate", "value": "moderate"},
+              {"text": "Severe", "value": "severe"}
+            ]
+          },
+          {
+            "id": "wound_location",
+            "text": "Where is the bleeding located?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Head/Neck", "value": "head_neck"},
+              {"text": "Torso", "value": "torso"},
+              {"text": "Arm/Leg", "value": "limb"}
+            ]
+          },
+          {
+            "id": "object_embedded",
+            "text": "Is an object embedded in the wound?",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "unconscious",
+        "title": "Unconscious Person",
+        "description": "An unconscious person is unable to respond to stimuli and requires immediate assessment and emergency care.",
+        "color": "#800080",
+        "icon": "bed",
+        "highPriority": true,
+        "dos": [
+          "Check for breathing and pulse; begin CPR if necessary.",
+          "Place the person in the recovery position if breathing.",
+          "Call emergency services immediately.",
+          "Ensure the airway is clear.",
+          "Stay with the person until help arrives."
+        ],
+        "donts": [
+          "Do not shake or slap the person.",
+          "Avoid giving food, drink, or medication.",
+          "Do not move the person unless in danger.",
+          "Avoid leaving them unattended.",
+          "Do not ignore breathing difficulty or irregular pulse."
+        ],
+        "questions": [
+          {
+            "id": "breathing",
+            "text": "Is the person breathing?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Normal", "value": "normal"},
+              {"text": "Gasping/Irregular", "value": "irregular"},
+              {"text": "Not Breathing", "value": "none"}
+            ]
+          },
+          {
+            "id": "pulse",
+            "text": "Do you feel a pulse?",
+            "type": "boolean"
+          },
+          {
+            "id": "cause_of_unconsciousness",
+            "text": "Do you know the possible cause of unconsciousness?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Known Medical Condition", "value": "medical"},
+              {"text": "Injury", "value": "injury"},
+              {"text": "Possible Overdose", "value": "overdose"},
+              {"text": "Unknown", "value": "unknown"}
+            ]
+          },
+          {
+            "id": "seizure_activity",
+            "text": "Did you witness seizure activity before they became unconscious?",
+            "type": "boolean"
+          },
+          {
+            "id": "response_to_stimuli",
+            "text": "Does the person respond to any stimuli (e.g., shouting, gentle shaking)?",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "chest_pain",
+        "title": "Chest Pain",
+        "description": "Chest pain may indicate a heart problem or other serious condition and should never be ignored.",
+        "color": "#FF69B4",
+        "icon": "monitor_heart",
+        "highPriority": false,
+        "dos": [
+          "Call emergency services immediately if pain persists or worsens.",
+          "Help the person sit comfortably and stay calm.",
+          "Administer aspirin if advised and no allergies exist.",
+          "Monitor vital signs.",
+          "Encourage slow, steady breathing."
+        ],
+        "donts": [
+          "Do not ignore chest pain.",
+          "Avoid exertion or stress.",
+          "Do not administer medications without advice.",
+          "Avoid assuming chest pain is non-serious.",
+          "Do not delay calling for help if symptoms worsen."
+        ],
+        "questions": [
+          {
+            "id": "pain_characteristics",
+            "text": "How would you describe the pain?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Sharp/Stabbing", "value": "sharp"},
+              {"text": "Pressure/Squeezing", "value": "pressure"},
+              {"text": "Dull Ache", "value": "dull"},
+              {"text": "Burning", "value": "burning"}
+            ]
+          },
+          {
+            "id": "pain_radiation",
+            "text": "Does the pain radiate to other areas?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "No Radiation", "value": "none"},
+              {"text": "Radiates to Left Arm", "value": "left_arm"},
+              {"text": "Radiates to Jaw", "value": "jaw"},
+              {"text": "Radiates to Back", "value": "back"}
+            ]
+          },
+          {
+            "id": "associated_symptoms",
+            "text": "Are there any associated symptoms (sweating, nausea, shortness of breath)?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Yes", "value": "yes"},
+              {"text": "No", "value": "no"},
+              {"text": "Don't know", "value": "unknown"}
+            ]
+          },
+          {
+            "id": "pain_level",
+            "text": "On a scale of 1 to 10, how severe is the pain?",
+            "type": "slider",
+            "min": 1,
+            "max": 10,
+            "defaultValue": 5
+          },
+          {
+            "id": "known_heart_problems",
+            "text": "Does the person have known heart problems?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Yes", "value": "yes"},
+              {"text": "No", "value": "no"},
+              {"text": "Don't know", "value": "unknown"}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "breathing",
+        "title": "Breathing Difficulty",
+        "description": "Difficulty breathing can be a symptom of various conditions, from anxiety to serious heart or lung issues.",
+        "color": "#0000FF",
+        "icon": "air",
+        "highPriority": false,
+        "dos": [
+          "Help the person sit upright.",
+          "Administer prescribed inhalers.",
+          "Call emergency services if breathing worsens.",
+          "Encourage slow breaths.",
+          "Monitor for cyanosis."
+        ],
+        "donts": [
+          "Do not lie the person flat.",
+          "Avoid panicking.",
+          "Do not administer unprescribed medications.",
+          "Avoid delaying medical attention for severe symptoms.",
+          "Do not leave the person unattended."
+        ],
+        "questions": [
+          {
+            "id": "severity_of_breathing",
+            "text": "How severe is the breathing difficulty?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Mild", "value": "mild"},
+              {"text": "Moderate", "value": "moderate"},
+              {"text": "Severe", "value": "severe"},
+              {"text": "Unable to Breathe", "value": "unable"}
+            ]
+          },
+          {
+            "id": "wheezing",
+            "text": "Is the person wheezing?",
+            "type": "boolean"
+          },
+          {
+            "id": "known_respiratory_issues",
+            "text": "Does the person have asthma, COPD, or other respiratory issues?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Yes", "value": "yes"},
+              {"text": "No", "value": "no"},
+              {"text": "Don't know", "value": "unknown"}
+            ]
+          },
+          {
+            "id": "cyanosis",
+            "text": "Are the lips or fingernails bluish?",
+            "type": "boolean"
+          },
+          {
+            "id": "trigger_of_breathing",
+            "text": "What could have triggered this breathing?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Known Allergic Reaction", "value": "allergic"},
+              {"text": "Exercise", "value": "exercise"},
+              {"text": "Unknown", "value": "unknown"}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "allergic_reaction",
+        "title": "Allergic Reaction",
+        "description": "An allergic reaction is the body's immune response to a foreign substance. Severe reactions can be life-threatening.",
+        "color": "#FFA500",
+        "icon": "coronavirus",
+        "highPriority": false,
+        "dos": [
+          "Administer an epinephrine auto-injector (EpiPen) if available.",
+          "Call emergency services for severe symptoms.",
+          "Keep the person seated and calm.",
+          "Remove exposure to allergens.",
+          "Monitor vital signs."
+        ],
+        "donts": [
+          "Do not wait for symptoms to worsen.",
+          "Avoid giving food or drink.",
+          "Do not assume mild reactions will stay mild.",
+          "Avoid delaying epinephrine administration.",
+          "Do not leave the person alone."
+        ],
+        "questions": [
+          {
+            "id": "known_allergies",
+            "text": "What is the person allergic to?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Food", "value": "food"},
+              {"text": "Insect Sting", "value": "insect"},
+              {"text": "Medication", "value": "medication"},
+              {"text": "Unknown", "value": "unknown"}
+            ]
+          },
+          {
+            "id": "epipen_use",
+            "text": "Has an EpiPen been administered?",
+            "type": "boolean"
+          },
+          {
+            "id": "difficulty_breathing",
+            "text": "Is the person having difficulty breathing or swallowing?",
+            "type": "boolean"
+          },
+          {
+            "id": "swelling_of_face_or_throat",
+            "text": "Is there swelling of the face, lips, or throat?",
+            "type": "boolean"
+          },
+          {
+            "id": "hives_or_rash",
+            "text": "Describe the hives",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "None", "value": "none"},
+              {"text": "Small and localized", "value": "small"},
+              {"text": "Large and spread out", "value": "large"}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "broken_bone",
+        "title": "Broken Bone",
+        "description": "A broken bone is a disruption in the continuity of bone tissue, usually caused by high force impact or stress.",
+        "color": "#FFD700",
+        "icon": "medical_services",
+        "highPriority": false,
+        "dos": [
+          "Immobilize the affected area.",
+          "Apply ice packs (wrapped in cloth).",
+          "Seek medical attention.",
+          "Keep the injured limb elevated.",
+          "Provide reassurance."
+        ],
+        "donts": [
+          "Do not attempt to straighten the bone.",
+          "Avoid applying pressure directly to open fractures.",
+          "Do not use unclean materials for splints.",
+          "Avoid delaying treatment.",
+          "Do not move unnecessarily."
+        ],
+        "questions": [
+          {
+            "id": "deformity",
+            "text": "Is there obvious deformity in the injured area?",
+            "type": "boolean"
+          },
+          {
+            "id": "open_fracture",
+            "text": "Is the bone protruding through the skin?",
+            "type": "boolean"
+          },
+          {
+            "id": "pain_level",
+            "text": "On a scale of 1 to 10, how severe is the pain?",
+            "type": "slider",
+            "min": 1,
+            "max": 10,
+            "defaultValue": 5
+          },
+          {
+            "id": "movement_restriction",
+            "text": "How much can the person move?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Normal movement", "value": "normal"},
+              {"text": "Slight movement", "value": "slight"},
+              {"text": "No movement", "value": "none"}
+            ]
+          },
+          {
+            "id": "numbness_or_tingling",
+            "text": "Is there any numbness or tingling in the injured limb?",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "burns",
+        "title": "Burns",
+        "description": "Burns are tissue damage caused by heat, chemicals, electricity, radiation, or friction.",
+        "color": "#FFA500",
+        "icon": "local_fire_department",
+        "highPriority": false,
+        "dos": [
+          "Cool the burn with cool running water for 10–20 minutes.",
+          "Cover with a sterile, non-stick dressing.",
+          "Remove jewelry/clothing near the burn (if not stuck to the skin).",
+          "Elevate burned limbs to reduce swelling.",
+          "Seek medical care for burns larger than the palm or on sensitive areas."
+        ],
+        "donts": [
+          "Do not apply ice, butter, or ointments.",
+          "Avoid breaking blisters.",
+          "Do not remove clothing stuck to the burn.",
+          "Avoid using adhesive bandages directly on the burn.",
+          "Do not ignore signs of infection (redness, pus)."
+        ],
+        "questions": [
+          {
+            "id": "burn_source",
+            "text": "What caused the burn?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Heat (fire, scalding)", "value": "heat"},
+              {"text": "Chemical", "value": "chemical"},
+              {"text": "Electrical", "value": "electrical"},
+              {"text": "Radiation", "value": "radiation"}
+            ]
+          },
+          {
+            "id": "burn_depth",
+            "text": "What is the depth of the burn?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "First-degree", "value": "first"},
+              {"text": "Second-degree", "value": "second"},
+              {"text": "Third-degree", "value": "third"},
+              {"text": "Unknown", "value": "unknown"}
+            ]
+          },
+          {
+            "id": "burn_size",
+            "text": "Estimate the percentage of body surface area burned.",
+            "type": "slider",
+            "min": 0,
+            "max": 100,
+            "defaultValue": 5
+          },
+          {
+            "id": "location_of_burn",
+            "text": "What part of the body is burned?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Face", "value": "face"},
+              {"text": "Hands", "value": "hands"},
+              {"text": "Torso", "value": "torso"},
+              {"text": "Legs", "value": "legs"}
+            ]
+          },
+          {
+            "id": "inhalation_injury",
+            "text": "Is there evidence of inhalation injury (soot around nose/mouth, hoarseness)?",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "choking",
+        "title": "Choking",
+        "description": "Choking occurs when an object becomes lodged in the throat or windpipe, blocking airflow.",
+        "color": "#008080",
+        "icon": "no_meals",
+        "highPriority": false,
+        "dos": [
+          "Perform abdominal thrusts (Heimlich maneuver) if the person cannot cough, speak, or breathe.",
+          "Call emergency services if the obstruction persists.",
+          "Encourage coughing if partially choking.",
+          "Check the mouth for visible obstructions.",
+          "Stay with the person until medical help arrives."
+        ],
+        "donts": [
+          "Do not slap the person's back while upright.",
+          "Avoid blind finger sweeps in the mouth.",
+          "Do not ignore persistent coughing or wheezing.",
+          "Avoid giving water or food until the airway is clear.",
+          "Do not delay emergency care for prolonged choking."
+        ],
+        "questions": [
+          {
+            "id": "airway_obstruction",
+            "text": "How would you characterize the airway obstruction?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Partial", "value": "partial"},
+              {"text": "Complete", "value": "complete"}
+            ]
+          },
+          {
+            "id": "consciousness",
+            "text": "Is the person conscious?",
+            "type": "boolean"
+          },
+          {
+            "id": "cause_of_choking",
+            "text": "What do you think the person was choking on?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Food", "value": "food"},
+              {"text": "Object", "value": "object"},
+              {"text": "Unknown", "value": "unknown"}
+            ]
+          },
+          {
+            "id": "cyanosis",
+            "text": "Are there signs of cyanosis (blue lips/nails)?",
+            "type": "boolean"
+          },
+          {
+            "id": "heimlich_maneuver",
+            "text": "Have abdominal thrusts (Heimlich maneuver) been attempted?",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "poisoning",
+        "title": "Poisoning",
+        "description": "Poisoning occurs when a harmful substance is ingested, inhaled, injected, or absorbed through the skin.",
+        "color": "#9400D3",
+        "icon": "warning",
+        "highPriority": false,
+        "dos": [
+          "Call emergency services or poison control immediately.",
+          "Identify the substance ingested.",
+          "Keep the person upright if conscious.",
+          "Follow instructions from medical professionals.",
+          "Monitor breathing and pulse."
+        ],
+        "donts": [
+          "Do not induce vomiting unless instructed.",
+          "Avoid giving food/drink without guidance.",
+          "Do not ignore symptoms like seizures or unconsciousness.",
+          "Avoid handling toxic substances without gloves.",
+          "Do not wait for symptoms before seeking help."
+        ],
+        "questions": [
+          {
+            "id": "substance_ingested",
+            "text": "What substance was ingested?",
+            "type": "text"
+          },
+          {
+            "id": "amount_ingested",
+            "text": "How much of the substance was ingested/inhaled?",
+            "type": "slider",
+            "min": 1,
+            "max": 10,
+            "defaultValue": 5,
+            "description": "1 = a little, 10 = the whole thing"
+          },
+          {
+            "id": "time_of_ingestion",
+            "text": "How long ago was the substance ingested? (Minutes)",
+            "type": "slider",
+            "min": 0,
+            "max": 120,
+            "defaultValue": 30
+          },
+          {
+            "id": "symptoms",
+            "text": "What symptoms is the person experiencing?",
+            "type": "multiple_choice",
+            "options": [
+              {"text": "Nausea/Vomiting", "value": "nausea"},
+              {"text": "Seizures", "value": "seizures"},
+              {"text": "Drowsiness/Confusion", "value": "drowsiness"},
+              {"text": "Difficulty Breathing", "value": "breathing"}
+            ]
+          },
+          {
+            "id": "empty_containers",
+            "text": "Are there any empty pill bottles or chemical containers nearby?",
+            "type": "boolean"
+          }
+        ]
+      }
+    ]
+  }
